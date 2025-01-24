@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="main.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Pollen Forecast</title>
 </head>
 <body>
     <header>
         <h1>3-day Pollen Forecast</h1>
+        <label class="darkmodeswitch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+        </label>
     </header>
-    <select id="cityDropdown">
-        <option value="" disabled selected>Select a city</option>
-    </select>
-    <select id="pollenTypeDropdown">
-        <option value="" disabled selected>Select a pollen type</option>
-    </select>
-    <div id="pollenInfo"></div>
+    <div id="forecastContainer">
+        <select id="cityDropdown">
+            <option value="" disabled selected>Select a city</option>
+        </select>
+        <select id="pollenTypeDropdown">
+            <option value="" disabled selected>Select a pollen type</option>
+        </select>
+        <div id="pollenInfo"></div>
+    </div>
     <img src="./Assets/Images/UPI.png" alt="The Universal Pollen Index" id="upiImg">
     <!-- <ul id="pollenLevels">
         <li id="pollenLevel0">Pollen Level 0 = None</li>

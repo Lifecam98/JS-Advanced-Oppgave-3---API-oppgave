@@ -5,16 +5,35 @@
 }
 
 body {
-    background-color: #333;
+    --bg-color: #fff;
+    --text-color: #111;
+    --header-bg-color: #a4a4a4;
+    --forecast-container-bg-color: #a4a4a4;
+    --forecast-container-text-color: #111;
+}
+
+[theme="dark"] body {
+    --bg-color: #333333;
+    --text-color: #fff;
+    --header-bg-color: #222222;
+    --forecast-container-bg-color: #fff;
+    --forecast-container-text-color: #111;
+}
+
+body {
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
-    height: 100svh;
+    color: var(--text-color);
+    width: 100%;
+    min-width: 100vw;
+    overflow-x: hidden;
 }
+
 header {
-    background-color: #222;
-    color: white;
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
     height: 5rem;
     text-align: center;
     width: 100%;
@@ -24,18 +43,14 @@ header {
     align-items: center;
 }
 
-#pollenInfo {
-    height: 5rem;
-}
-
 footer {
     position: absolute;
     bottom: 0;
-    background-color: #222;
-    color: white;
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
     height: 5rem;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +58,7 @@ footer {
 }
 
 a {
-    color: white;
+    color: var(--text-color);
 }
 
 footer p {
@@ -51,8 +66,25 @@ footer p {
     font-size: 0.8rem;
 }
 
+h1 {
+    font-size: 2rem;
+}
+
+#forecastContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--forecast-container-bg-color);
+    padding: 2rem;
+    border-radius: 25px
+}
+
+#pollenInfo {
+    height: 4rem;
+}
+
 #upiImg {
-    width: 27rem;
+    width: 30%;
 }
 
 #pollenLevels {
@@ -94,4 +126,61 @@ footer p {
 
 #pollenTypeDropdown, #cityDropdown {
     margin-top: 0.5rem;
+}
+
+.darkmodeswitch {
+    display: block;
+    margin-top: -27px;
+    margin-right: -20px;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    --size-of-icon: 1.4em;
+    --slider-offset: 0.3em;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+}
+
+.darkmodeswitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e9e9ea;
+    transition: 0.6s;
+    border-radius: 30px;
+    border: 1px solid #9f9f9f;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon, 1.4em);
+    width: var(--size-of-icon, 1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset, 0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg, #ffea00, #ff0000 70%);
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #333333;
+}
+
+input:checked+.slider:before {
+    left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+    background: #333333;
+    box-shadow: inset -3px -2px 5px -2px #4943b7, inset -10px -4px 0 0 #f8f8f8;
 }
