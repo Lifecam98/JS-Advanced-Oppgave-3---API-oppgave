@@ -10,6 +10,49 @@ body {
     flex-direction: column;
     align-items: center;
     color: white;
+    height: 100svh;
+}
+header {
+    background-color: #222;
+    color: white;
+    height: 5rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pollenInfo {
+    height: 5rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #222;
+    color: white;
+    height: 5rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: white;
+}
+
+footer p {
+    margin: 0.2rem;
+    font-size: 0.8rem;
+}
+
+#upiImg {
+    width: 27rem;
 }
 
 #pollenLevels {
