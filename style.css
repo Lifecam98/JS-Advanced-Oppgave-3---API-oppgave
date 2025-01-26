@@ -76,48 +76,17 @@ h1 {
     align-items: center;
     background-color: var(--forecast-container-bg-color);
     padding: 2rem;
-    border-radius: 25px
+    border-radius: 25px;
+    width: 26%;
 }
 
 #pollenInfo {
     height: 4rem;
+    color: var(--forecast-container-text-color);
 }
 
 #upiImg {
     width: 30%;
-}
-
-#pollenLevels {
-    margin-top: 3rem;
-    list-style: none;
-}
-
-#pollenLevels li {
-    margin-bottom: 0.2rem;
-}
-
-#pollenLevel0 {
-    color: #3cff00
-}
-
-#pollenLevel1 {
-    color: #b7ff00
-}
-
-#pollenLevel2 {
-    color: #fbff00
-}
-
-#pollenLevel3 {
-    color: #ffd500
-}
-
-#pollenLevel4 {
-    color: #ff8400
-}
-
-#pollenLevel5 {
-    color: #ff0000
 }
 
 #pollenInfo {
