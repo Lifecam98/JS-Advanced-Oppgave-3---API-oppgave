@@ -6,6 +6,10 @@ const apiKey = key.apiKey;
 let cities = [];
 let storedPollenData = null;
 
+const dropdown = document.getElementById("cityDropdown");
+const pollenTypeDropdown = document.getElementById('pollenTypeDropdown');
+const pollenInfoDiv = document.getElementById("pollenInfo");
+
 function loadCities() {
     return fetch('./cities.json')
     .then(response => response.json())
@@ -17,10 +21,6 @@ function loadCities() {
         console.error('Error loading cities:', error);
     });
 }
-
-const dropdown = document.getElementById("cityDropdown");
-const pollenTypeDropdown = document.getElementById('pollenTypeDropdown');
-const pollenInfoDiv = document.getElementById("pollenInfo");
 
 function populateDropdown() {
     cities.forEach(city => {
